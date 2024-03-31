@@ -11,20 +11,16 @@
 <br/>
 Maksud soal : Kita diminta untuk mencari Username FTP yang digunakan oleh attacker & Password FTP yang digunakan oleh attacker
 <br />
-**Cara Pengerjaan:**
-<br/> 
-1. Memfilter agar protocol yang keluar FTP semua & scroll sampai "Login successful"
-![2](gambar/creds2.png)
-<br/>
-2. Click Follow > TCP Stream
-![3](gambar/creds3.png)
-<br/>
+**Cara pengerjaan:**
+1. Memfilter ftp && frame contains " Login " artinya untuk mencari yang Login saja, kemudian resultnya hanya keluar 1 yang succesfull
+![dwa](gambar/creds2.png)
+2. Kemudian klik Follow > TCP Stream, akan muncul seperti ini 
+![hehe](gambar/creds3.png)
 3. Kemudian akan muncul USER dan PASS nya
-![4](gambar/creds4.png)
-<br />
+![hwhw](gambar/creds4.png)
+
 **Jika dimasukan ke netcat maka akan ketemu flagnya**
-<br />
-![5](gambar/creds5.png)
+![aokwaow](gambar/creds5.png)
 
 ## 2. Evidence
 ![ev](gambar/ev.png)
@@ -94,5 +90,5 @@ Maksud soal : Kita diminta untuk mencari file lainnya selain dari file malware
 2. Download mirza.jpg
  ![8](gambar/secret3.png)
 
-**Jika dimasukan ke netcat maka akan ketemu flagnya**
+**Jika dimasukan ke netcat maka akan ketemu flagnya:**
 ![4](gambar/secret4.png)
