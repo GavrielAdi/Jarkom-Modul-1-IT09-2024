@@ -65,6 +65,7 @@ File : capture.pcap
 Maksud soal : Kita diminta untuk menganalisis network traffic ini untuk melacak attackernya
 <br />
 **Cara pengerjaan:**
+1. 
 
 ## 4. ATM or ATP or FTP
 ![atm](gambar/atm1.png)
@@ -106,6 +107,11 @@ File : ftp.pcap
 Maksud soal : Kita diminta untuk mencari alamat IP Attacker
 <br />
 **Cara pengerjaan:**
+1. Langsung dapat terlihat IP dari attackernya, yaitu 10.30.3.4, dibuktikan dengan permintaan untuk mengakses user adminJarkom kepada IP 10.15.40.20.
+![trace1](gambar/trace1.png)
+
+**Jika dimasukan ke netcat maka akan ketemu flagnya:**
+![trace2](gambar/trace2.png)
 
 ## 7. Malwaew
 ![malwaew](gambar/malwaew.png)
@@ -151,6 +157,13 @@ File : evidence.pcap
 Maksud soal : Kita diminta untuk menemukan identitas attacker
 <br />
 **Cara pengerjaan:**
+1. Melakukan filter pada tcp dan ditemukan sebuah string unik pada stream ke-7.
+![wh1](gambar/wh1.png)
+2. Dilakukan decode pada string tersebut dalam base64 dan ditemukan nama seseorang.
+![wh2](gambar/wh2.png)
+
+**Jika dimasukan ke netcat maka akan ketemu flagnya:**
+![wh3](gambar/wh3.png)
 
 ## 10. Secret
 ![6](gambar/secret1.png)
