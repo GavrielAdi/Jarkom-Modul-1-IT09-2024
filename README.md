@@ -5,18 +5,32 @@
 | Gavriel Pramuda Kurniaadi | 5027221031  |
 | Stephanie Hebrina Mabunbun Simatupang | 5027221069  | 
 
-## 1. Creds
+## Daftar isi
+- [Jarkom-Modul-1-IT09-2024](#jarkom-modul-1-it09-2024)
+  - [Daftar isi](#daftar-isi)
+  - [1. Creds](#1-creds)
+  - [2. Evidence](#2-evidence)
+  - [3. Fuzz](#3-fuzz)
+  - [4. ATM or ATP or FTP](#4-atm-or-atp-or-ftp)
+  - [5. How Many Packets?](#5-how-many-packets)
+  - [6. Trace Him](#6-trace-him)
+  - [7. Malwaew](#7-malwaew)
+  - [8. Malwleowleo](#8-malwleowleo)
+  - [9. Whoami](#9-whoami)
+  - [10. Secret](#10-secret)
 
+## 1. Creds
 ![1](gambar/creds1.png)
 <br/>
-Maksud soal : Kita diminta untuk mencari Username FTP yang digunakan oleh attacker & Password FTP yang digunakan oleh attacker
+File : evidence.pcap
+Maksud soal : Kita diminta untuk mencari Username FTP yang digunakan oleh attacker & Password FTP yang digunakan oleh attacker. 
 <br />
 **Cara pengerjaan:**
 1. Memfilter ftp && frame contains " Login " artinya untuk mencari yang Login saja, kemudian resultnya hanya keluar 1 yang succesfull
 ![dwa](gambar/creds2.png)
-2. Kemudian klik Follow > TCP Stream, akan muncul seperti ini 
+1. Kemudian klik Follow > TCP Stream, akan muncul seperti ini 
 ![hehe](gambar/creds3.png)
-3. Kemudian akan muncul USER dan PASS nya
+1. Kemudian akan muncul USER dan PASS nya
 ![hwhw](gambar/creds4.png)
 
 **Jika dimasukan ke netcat maka akan ketemu flagnya**
@@ -24,6 +38,22 @@ Maksud soal : Kita diminta untuk mencari Username FTP yang digunakan oleh attack
 
 ## 2. Evidence
 ![ev](gambar/ev.png)
+<br/>
+File : challenge.pcapng
+Maksud soal : Kita diminta untuk mencari informasi tentang cara pelaku bisa masuk ke dalam perusahaan nanomate.
+<br />
+**Cara pengerjaan:**
+1. Melakukan follow pada salah satu stream TCP dan didapatkan informasi mengenai domain dan web server korban.
+![ev1](gambar/ev1.png)
+2. Kemudian, dilakukan pencarian endpoint yang digunakan untuk login sebagai user biasa dengan melakukan filter http. Ditemukan ada banyak sekali endpoint ```/app/includes/process_login.php```, kemudian dicoba untuk submit dan jawabannya benar.
+![ev2](gambar/ev2.png)
+3. Terakhir, dilakukan pencarian email dan password yang berhasil digunakan untuk login sebagai user biasa. Dilakukan sorting dengan menekan kata "Info" untuk mempermudah pencarian email dan password pada "302 Found". Ditemukan juga ada kalimat menarik, yaitu Invalid Username or Password.
+![ev3](gambar/ev3.png)
+4. Dilakukan follow HTTP dan ditemukan ada kalimat Login Successful pada ```tcp.stream eq 1240``` sehingga berhasil ditemukan email dan passwordnya.
+![ev4](gambar/ev4.png)
+
+**Jika dimasukan ke netcat maka akan ketemu flagnya**
+![ev5](gambar/ev5.png)
 
 ## 3. Fuzz
 ![f](gambar/fuzz.png)
@@ -63,8 +93,26 @@ Maksud soal : Kita diminta untuk mencari alamat IP Attacker
 <br />
 
 ## 7. Malwaew
+![malwaew](gambar/malwaew.png)
+<br/>
+Maksud soal : Diminta untuk menganalisis network traffic salah satu komputer yang terkena malware dan menemukannya
+<br/>
+**Cara pengerjaan:**
+1. Pada folder infected, diberikan file keylog.txt. Kemudian membuka Edit -> Preferences -> Protocols -> TLS dan memasukkan file tadi ke dalam (Pre)-Master-Secret log filename.
+![malwaew1](gambar/malwaew1.png)
+2. Melakukan filter http dan ditemukan file mencurigakan, yaitu invest_20.dll
+![malwaew2](gambar/malwaew2.png)
+3. Download file dengan membuka File -> Export Objects -> HTTP
+![malwaew3](gambar/malwaew3.png)
+4. Mengecek informasi tentang file tersebut dengan command ```file invest_20.dll``` dan ditemukan bahwa file tersebut merupakan file executable
+![malwaew4](gambar/malwaew4.png)
+5. Mengecek hash SHA256 dari file tersebut
+![malwaew5](gambar/malwaew5.png)
 
-## 8. Malwleo
+**Jika dimasukan ke netcat maka akan ketemu flagnya**
+![malwaew6](gambar/malwaew6.png)
+
+## 8. Malwleowleo
 ![wle](gambar/wleo.png)
 <br/>
 Maksud soal : Kita diminta untuk mencari nama malware yang dikirim oleh attacker melalui ftp
