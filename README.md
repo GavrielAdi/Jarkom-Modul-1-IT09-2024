@@ -23,14 +23,15 @@
 ![1](gambar/creds1.png)
 <br/>
 File : evidence.pcap
+<br/>
 Maksud soal : Kita diminta untuk mencari Username FTP yang digunakan oleh attacker & Password FTP yang digunakan oleh attacker. 
 <br />
 **Cara pengerjaan:**
 1. Memfilter ftp && frame contains " Login " artinya untuk mencari yang Login saja, kemudian resultnya hanya keluar 1 yang succesfull
 ![dwa](gambar/creds2.png)
-1. Kemudian klik Follow > TCP Stream, akan muncul seperti ini 
+2. Kemudian klik Follow > TCP Stream, akan muncul seperti ini 
 ![hehe](gambar/creds3.png)
-1. Kemudian akan muncul USER dan PASS nya
+3. Kemudian akan muncul USER dan PASS nya
 ![hwhw](gambar/creds4.png)
 
 **Jika dimasukan ke netcat maka akan ketemu flagnya**
@@ -40,6 +41,7 @@ Maksud soal : Kita diminta untuk mencari Username FTP yang digunakan oleh attack
 ![ev](gambar/ev.png)
 <br/>
 File : challenge.pcapng
+<br/>
 Maksud soal : Kita diminta untuk mencari informasi tentang cara pelaku bisa masuk ke dalam perusahaan nanomate.
 <br />
 **Cara pengerjaan:**
@@ -57,9 +59,17 @@ Maksud soal : Kita diminta untuk mencari informasi tentang cara pelaku bisa masu
 
 ## 3. Fuzz
 ![f](gambar/fuzz.png)
+<br/>
+File : capture.pcap
+<br/>
+Maksud soal : Kita diminta untuk menganalisis network traffic ini untuk melacak attackernya
+<br />
+**Cara pengerjaan:**
 
 ## 4. ATM or ATP or FTP
 ![atm](gambar/atm1.png)
+<br/>
+File : ftp.pcap
 <br/>
 Maksud soal : Kita diminta untuk mencari password yang berhasil didapatkan oleh hacker setelah melakukan bruteforce login ftp
 <br />
@@ -75,6 +85,8 @@ Maksud soal : Kita diminta untuk mencari password yang berhasil didapatkan oleh 
 ## 5. How Many Packets?
 ![many](gambar/many1.png)
 <br/>
+File : ftp.pcap
+<br/>
 Maksud soal : Kita diminta untuk menghitung total attempt login(bruteforce) yang dilakukan oleh hacker
 <br />
 **Cara pengerjaan:**
@@ -89,11 +101,16 @@ Maksud soal : Kita diminta untuk menghitung total attempt login(bruteforce) yang
 ## 6. Trace Him
 ![trace](gambar/trace.png)
 <br/>
+File : ftp.pcap
+<br/>
 Maksud soal : Kita diminta untuk mencari alamat IP Attacker
 <br />
+**Cara pengerjaan:**
 
 ## 7. Malwaew
 ![malwaew](gambar/malwaew.png)
+<br/>
+File : infected.zip
 <br/>
 Maksud soal : Diminta untuk menganalisis network traffic salah satu komputer yang terkena malware dan menemukannya
 <br/>
@@ -115,6 +132,8 @@ Maksud soal : Diminta untuk menganalisis network traffic salah satu komputer yan
 ## 8. Malwleowleo
 ![wle](gambar/wleo.png)
 <br/>
+File : evidence.pcap
+<br/>
 Maksud soal : Kita diminta untuk mencari nama malware yang dikirim oleh attacker melalui ftp
 <br />
 **Cara pengerjaan:**
@@ -126,9 +145,17 @@ Maksud soal : Kita diminta untuk mencari nama malware yang dikirim oleh attacker
 
 ## 9. Whoami
 ![wh](gambar/wh.png)
+<br/>
+File : evidence.pcap
+<br/>
+Maksud soal : Kita diminta untuk menemukan identitas attacker
+<br />
+**Cara pengerjaan:**
 
 ## 10. Secret
 ![6](gambar/secret1.png)
+<br/>
+File : evidence.pcap
 <br/>
 Maksud soal : Kita diminta untuk mencari file lainnya selain dari file malware
 <br />
