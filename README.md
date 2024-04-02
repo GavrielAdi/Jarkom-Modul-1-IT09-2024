@@ -7,7 +7,6 @@
 
 ## Daftar isi
 - [Jarkom-Modul-1-IT09-2024](#jarkom-modul-1-it09-2024)
-  - [Daftar isi](#daftar-isi)
   - [1. Creds](#1-creds)
   - [2. Evidence](#2-evidence)
   - [3. Fuzz](#3-fuzz)
