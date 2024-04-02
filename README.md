@@ -175,8 +175,12 @@ Maksud soal : Kita diminta untuk mencari file lainnya selain dari file malware
 **Cara pengerjaan:**
 1. Memfilter ftp-data
 ![7](gambar/secret2.png)
-2. Download mirza.jpg
+2. Klik yang STOR Mirza.jpg > File > Export Object > FTP-Data
+![wkwkwk](gambar/secret5.png)
+3. Kemudian Save gambarnya ke file
  ![8](gambar/secret3.png)
+4. Saat dibuka gambarnya, akan muncul jawabannya :D
+![wow](gambar/secret6.png)
 
 **Jika dimasukan ke netcat maka akan ketemu flagnya:**
 ![4](gambar/secret4.png)
