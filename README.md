@@ -64,7 +64,19 @@ File : capture.pcap
 Maksud soal : Kita diminta untuk menganalisis network traffic ini untuk melacak attackernya
 <br />
 **Cara pengerjaan:**
-1. 
+1. Terlihat bahwa terdapat POST request dari IP 10.33.1.154 kepada IP 172.20.0.2, maka dapat disimpulkan bahwa IP attacker adalah 10.33.1.154 dan IP korban adalah 172.20.0.2.
+![f1](gambar/fuzz1.png)
+2. Kemudian, dilakukan pencarian port dari web server korban dengan mengecek detail packet dari IP korban ke IP attacker. Ditemukan terdapat pengiriman data dari port 80 ke port 1264 sehingga port dari web server korban adalah 80.
+![f2](gambar/fuzz2.png)
+3. Dilakukan follow pada salah satu packet yang berisi POST request dan ditemukan bahwa attacker melakukan POST pada endpoint /. Ditemukan juga tool yang digunakan, yaitu Fuzz Faster U Fool v2.0.0-dev atau disingkat ffuf-v2.0.0-dev.
+![f3](gambar/fuzz3.png)
+4. Untuk mencari username dan password yang berhasil ditemukan attacker, dilakukan pencarian menggunakan fitur "Find a Packet" dengan icon kaca pembesar dan memasukkan string 302 Found.
+![f4](gambar/fuzz4.png)
+5. Dilakukan follow terhadap packet tersebut, dicari string 302 Found, dan ditemukan kredensial user yang berhasil digunakan attacker.
+![f5](gambar/fuzz5.png)
+
+**Jika dimasukan ke netcat maka akan ketemu flagnya**
+![f6](gambar/fuzz6.png)
 
 ## 4. ATM or ATP or FTP
 ![atm](gambar/atm1.png)
